@@ -36,3 +36,5 @@
 	<script src="/assets/components/MyCustomOrders/js/customOrders.js"></script>
 
 Теперь самое интересное, на странице, которая у вас отвечает за вывод заказов пользователю добавте чанк **getUserOrder**, и скопируйте в него содержимое файла **/assets/components/MyCustomOrders/chunk/chunk.tpl.html**
+
+Вот собственно и все
