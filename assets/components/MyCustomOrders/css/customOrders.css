@@ -1,0 +1,180 @@
+.customOrders .customOrders_wrapper {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+.customOrders .customOrders_wrapper .item {
+	padding: 15px 0;
+	margin: 12px;
+	border: 1px solid  #eee;
+	border-radius: 7px;
+	min-width: 287px;
+	cursor: pointer;
+	transition: .25s;
+}
+.customOrders .customOrders_wrapper .item .top, .customOrders .customOrders_wrapper .item .middle, .customOrders .customOrders_wrapper .item .bottom {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	-moz-flex-direction: row;
+	-ms-flex-direction: row;
+	-o-flex-direction: row;
+	flex-direction: row;
+	-webkit-flex-wrap: nowrap;
+	-moz-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	-o-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	-ms-align-items: center;
+	align-items: center;
+	padding: 0px 15px;
+}
+.customOrders .customOrders_wrapper .item .top {
+	padding: 10px 15px;
+}
+.customOrders .customOrders_wrapper .item .top .num:before {
+	content: '#';
+	margin-right: 5px;
+	font-size: 1.1rem;
+}
+.customOrders .customOrders_wrapper .item .top .price:after {
+	content: '₽';
+	margin-left: 5px;
+	color: #e74c3c;
+	font-weight: bold;
+}
+.customOrders .customOrders_wrapper .item .top .price {
+	color: #e74c3c;
+	font-weight: bold;
+}
+.customOrders .customOrders_wrapper .item .middle {
+	margin: 10px 0;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 10px;
+}
+.customOrders .customOrders_wrapper .item .middle .status {
+	color: #1abc9c;
+}
+.customOrders .customOrders_wrapper .item .middle .date {
+	color: #b8b8b8;
+	font-size: .8rem;
+}
+.customOrders .customOrders_wrapper .item .bottom {
+	padding-top: 10px;
+}
+.customOrders .customOrders_wrapper .item:hover {
+	box-shadow: 5px 5px 40px rgba(0,0,0,.2);
+}
+
+.order_detail {
+    padding: 0;
+    padding: 0;
+    margin: 0;
+    max-width: 750px;
+    border-radius: 5px;
+    box-shadow: 0 3px 61px rgba(0,0,0,0.92);
+    /* background: #1abc9c; */
+}
+.order_detail .title {
+    background: #f7f7f7;
+    font-size: 1.4rem;
+    padding: 10px 15px;
+}
+.order_detail .title #num:before {
+	content: '#';
+	margin-right: 5px;
+	margin-left: 10px;
+}
+.order_detail .order_body {
+	padding: 10px 15px;
+}
+.order_detail .order_body .row-group {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	-moz-flex-direction: row;
+	-ms-flex-direction: row;
+	-o-flex-direction: row;
+	flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.order_detail .order_body .row-group .colum {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-basis: 330px;
+    justify-content: space-between;
+    padding: 5px 10px;
+    color: #9e9e9e;
+    font-size: 0.85rem;
+    -ms-align-items: center;
+}
+.order_detail .order_body .row-group .colum > * {
+	
+}
+.order_detail .order_body .row-group .colum > *:first-child {
+	color: #000;
+	text-align: right;
+}
+.order_detail .order_body .row-group .colum #delivery_price:after, .order_detail .order_body .row-group .colum #cart_price:after {
+	content: '₽';
+	margin-left: 5px;
+}
+.order_detail .order_body .row-group .colum #weight:after {
+	content: 'кг';
+	margin-left: 5px;
+}
+.product_body {
+	padding: 0 15px;
+}
+.product_body h3 {
+	padding: 10px 0; 
+	margin: 0;
+	font-weight: lighter;
+}
+.product_body table {
+	width: 100%;
+}
+.product_body table {
+    border-collapse: collapse;
+}
+.product_body {
+    padding-bottom: 11px;
+}
+.product_body thead td {
+    font-weight: bold;
+}
+.product_body td {
+    padding: 10px 15px;
+}
+.product_body thead tr {
+    background: #eee;
+}
+.product_body table tr {
+    border-bottom: 1px solid #eee;
+}
+@media screen and (max-width: 770px) {
+	.order_detail .order_body .row-group .colum{
+		flex-basis: auto;
+	}
+}

@@ -1,0 +1,90 @@
+<div class="customOrders">
+  <h3>Мои заказы: </h3>
+  <div class="customOrders_wrapper">
+    [[!pdoResources?
+      &class=`msOrder`
+      &sortby=`createdon`
+      &leftJoin=`{
+        "msDelivery":{"class":"msDelivery", "on":"msDelivery.id = msOrder.delivery"},
+        "msPayment":{"class":"msPayment", "on":"msPayment.id = msOrder.payment"},
+        "msOrderStatus":{"class":"msOrderStatus", "on":"msOrderStatus.id = msOrder.status"},
+        "msOrderAddress":{"class":"msOrderAddress", "on":"msOrderAddress.id = msOrder.id"}
+      }`
+      &select=`{
+        "msOrder": "*",
+        "msDelivery": "msDelivery.name as deliveryName",
+        "msPayment": "msPayment.name as paymentName",
+        "msOrderStatus": "msOrderStatus.name as statusName, msOrderStatus.color",
+        "msOrderAddress": "*"
+      }`
+      &where=`{"msOrder.user_id":[[+modx.user.id]]}`
+      &showLog=`0`
+      &limit=`9999`
+      &tpl=`order_row`
+    ]]
+  </div>
+  <div style="display: none;" id="order_detail" class="order_detail">
+    <div class="title">Заказ <span id="num"></span></div>
+    <div class="order_body">
+      <div class="row-group">
+        <div class="colum">
+          Покупатель: <span id="name"></span>
+        </div>
+        <div class="colum">
+          Стоимость покупок: <span id="cart_price"></span>
+        </div>
+      </div>
+      <div class="row-group">
+        <div class="colum">
+          Оплата: <span id="payment_name"></span>
+        </div>
+        <div class="colum">
+          Время: <span id="date"></span>
+        </div>
+      </div>
+      <div class="row-group">
+        <div class="colum">
+          Доставка: <span id="delivery_name"></span>
+        </div>
+        <div class="colum">
+          Стоимость доставки: <span id="delivery_price"></span>
+        </div>
+      </div>
+      <div class="row-group">
+        <div class="colum">
+          Статус заказа: <span id="status_name"></span>
+        </div>
+        <div class="colum">
+          Адрес доставки: <span id="delivery_adress"></span>
+        </div>
+      </div>
+      <div class="row-group">
+        <div class="colum">
+          Трек - номер: <span id="track"></span>
+        </div>
+        <div class="colum">
+          Статус посылки: <span id="status_delivery"></span>
+        </div>
+      </div>
+      <div class="row-group">
+        <div class="colum">
+          Вес посылки: <span id="weight"></span>
+        </div>
+      </div>
+    </div>
+    <div class="product_body">
+      <h3>Позиции заказа:</h3>
+      <table>
+        <thead>
+          <tr>
+            <td>№</td>
+            <td>Наименование</td>
+            <td>Кол-во</td>
+            <td>Цена, ₽</td>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
