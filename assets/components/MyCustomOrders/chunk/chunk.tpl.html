@@ -8,7 +8,7 @@
         "msDelivery":{"class":"msDelivery", "on":"msDelivery.id = msOrder.delivery"},
         "msPayment":{"class":"msPayment", "on":"msPayment.id = msOrder.payment"},
         "msOrderStatus":{"class":"msOrderStatus", "on":"msOrderStatus.id = msOrder.status"},
-        "msOrderAddress":{"class":"msOrderAddress", "on":"msOrderAddress.id = msOrder.id"}
+        "msOrderAddress":{"class":"msOrderAddress", "on":"msOrderAddress.id = msOrder.address"}
       }`
       &select=`{
         "msOrder": "*",

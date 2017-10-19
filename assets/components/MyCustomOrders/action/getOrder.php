@@ -29,7 +29,7 @@ $pdoFetch->setConfig(array(
       ),
     'msOrderAddress' => array(
       'class' => 'msOrderAddress',
-      'on' => 'msOrderAddress.id = msOrder.id'
+      'on' => 'msOrderAddress.id = msOrder.address'
       )
     ),
     'select' => array(
