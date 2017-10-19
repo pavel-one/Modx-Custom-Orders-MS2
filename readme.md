@@ -39,4 +39,25 @@
 
 Теперь самое интересное, на странице, которая у вас отвечает за вывод заказов пользователю добавте чанк **getUserOrder**, и скопируйте в него содержимое файла **/assets/components/MyCustomOrders/chunk/chunk.tpl.html**
 
+Код чанка **order_row**:
+
+	<div class="item" data-id="{$id}">
+	  <div class="top">
+	    <div class="num">{$num}</div>
+	    <div class="price">{$cost}</div>
+	  </div>
+	  <div class="middle">
+	    <div class="status" style="color: #{$color}">{$statusName}</div>
+	    <div class="date">{$createdon | dateAgo}</div>
+	  </div>
+	  <div class="bottom">
+	    <div class="left">
+	      Подробнее
+	    </div>
+	    <div class="right">
+	      <i class="fa fa-angle-right" aria-hidden="true"></i>
+	    </div>
+	  </div>
+	</div>
+
 Вот собственно и все
