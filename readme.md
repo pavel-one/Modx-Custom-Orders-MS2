@@ -8,11 +8,11 @@
 
 ## Добавляем поле заказа:
 
-Добавляем новое поле в нашу базу данных в таблицу **modx_ms2_orders**  
-**Имя:** track  
-**Тип:** varchar   
-**Длина:** 255  
-**Null:** true  
+Добавляем новое поле в нашу базу данных в таблицу **modx_ms2_orders**. В консоле выполняем:
+
+	$table = $modx->getTableName('msOrder');
+	$sql = 'ALTER TABLE ' . $table . '  ADD `track` VARCHAR(255) NULL;';
+	$modx->exec($sql);
 
 Расширяем модель msOrder добавляя нашу карту:
 
